@@ -1,0 +1,82 @@
+mixin nav-link(links)
+    each item in links
+        +e('li').item(class= item.isActive ? 'active' : '')
+            +e('a').link(href= item.href)= item.caption
+
+
+
+mixin languages
+    +b('ul').lang
+        +e.item.active
+            +e.link(href="#") Ру
+        +e.item
+            +e.link(href="#") En
+
+
+
+mixin mob-navigation(list)
+    each item in list
+        +e('li').item(class= item.isActive ? 'active' : '')
+            +e.link(href= item.href)= item.title
+
+
+
+mixin history-list(list)
+    - var n = 1
+
+    each item in list
+        +e('li').item= n++
+        if n % 2 == 0
+            +e('div').col._left
+                +e('div').wrapper
+                    +e('label').img(for='historyItem' + n)
+                        +e('img').icon(src='images/' + item.icon + '.svg')
+                        +e('span').year= item.year
+            +e('div').col._right
+                +e.input(type='checkbox', name='historyItem', id='historyItem' + n)
+                +e('div').content
+                    +e('label').close(for='historyItem' + n)
+                    +e('div').inner
+                        +e('h4').title= item.title
+                        +e('p').text= item.text
+        else
+            +e('div').col._right
+                +e.input(type='checkbox', name='historyItem', id='historyItem' + n)
+                +e('div').content
+                    +e('label').close(for='historyItem' + n)
+                    +e('div').inner
+                        +e('h4').title= item.title
+                        +e('p').text= item.text
+            +e('div').col._left
+                +e('div').wrapper
+                    +e('label').img(for='historyItem' + n)
+                        +e('img').icon(src='images/' + item.icon + '.svg')
+                        +e('span').year= item.year
+
+
+
+mixin portfolio-list(list)
+    - var n = 1
+
+    each item in list
+        +e('li').item
+            +e('div').wrapper
+                svg.icon('xmlns'='http://www.w3.org/2000/svg' width='100%' height='100%')
+                    line.top(x1='0' y1='0' x2='1014' y2='0')
+                    line.left(x1='0' y1='338' x2='0' y2='-676')
+                    line.bottom(x1='338' y1='338' x2='-676' y2='338')
+                    line.right(x1='338' y1='0' x2='338' y2='1014')
+
+                +e('div').preview
+                    +e('div').normal
+                        +e('img').img(src='images/' + item.preview + '.png')
+                    +e('div').blur
+                        +e('img').img(src='images/' + item.preview + '-blur.png')
+                    +e('label').zoom(for='portfolioZoom' + n)
+                        +e('img')(src='images/ico-search.svg')
+
+                +e('div').title
+                    +e('h3')
+                        +e('a').link(href= item.link, target='_blank')= item.title
+
+                - n++

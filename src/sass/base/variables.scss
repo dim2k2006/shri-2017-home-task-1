@@ -1,0 +1,72 @@
+// Font-family
+$font-family-bold: 'open_sansbold', Arial, Helvetica, sans-serif;
+$font-family-extrabold: 'open_sansextrabold', Arial, Helvetica, sans-serif;
+$font-family-regular: 'open_sansregular', Arial, Helvetica, sans-serif;
+$font-family-light: 'open_sanslight', Arial, Helvetica, sans-serif;
+$font-family-lightitalic: 'open_sanslight_italic', Arial, Helvetica, sans-serif;
+$font-family-semibold: 'open_sanssemibold', Arial, Helvetica, sans-serif;
+
+// Font-size
+$font-size-extrasmall: 12px;
+$font-size-smaller: 13px;
+$font-size-small: 14px;
+$font-size-predefault: 15px;
+$font-size-default: 16px;
+$font-size-premedium: 18px;
+$font-size-medium: 20px;
+$font-size-mediumplus: 22px;
+$font-size-prelarge: 24px;
+$font-size-semilarge: 32px;
+$font-size-large: 36px;
+$font-size-largeplus: 50px;
+$font-size-huge: 72px;
+$font-size-extrahuge: 90px;
+$font-size-megahuge: 130px;
+
+// Colors
+$color-gray: #333;
+$color-grey-light: #363636;
+$color-grey-lighter: #696969;
+$color-white: #fff;
+$color-yellow: #ffcb08;
+$color-yellow-alt: #face2d;
+$color-yellow-alt2: #f6cc3e;
+$color-yellow-darker: #f5c308;
+$color-red: #d12626;
+$color-black: #000;
+
+// Color
+$color-primary: $color-black;
+$color-secondary: #565656;
+
+// Color links
+$color-hover: $color-yellow-alt2;
+
+// Color backgrounds
+$color-button: $color-black;
+$color-button-hover: $color-grey-light;
+
+// Color notifications
+$color-attention: $color-red;
+
+// Breakpoints
+$breakpoints: (
+    'small' : (max-width: 480px),
+    'medium': (max-width: 640px),
+    'prebig': (max-width: 767px),
+    'big': (max-width: 800px),
+    'intermediary': (max-width: 960px),
+    'increased': (max-width: 1040px),
+    'huge': (max-width: 1260px),
+    'ultrahuge': (max-width: 1400px),
+    'premonsterhuge': (max-width: 1717px),
+    'monsterhuge': (max-width: 2000px)
+);
+
+// Grid
+$susy: (
+    columns: 12,
+    container: 1200px,
+    gutters: 1/4,
+    global-box-sizing: border-box
+);
