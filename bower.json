@@ -1,9 +1,9 @@
 {
-    "name": "generator-webapp-jade-sass",
-    "version": "0.1.0",
-    "dependencies": {
-        "jquery": "1.9.1",
-        "normalize.css": "~3.0.3",
-        "susy": "https://github.com/oddbird/susy.git"
-    }
+  "name": "generator-webapp-jade-sass",
+  "version": "0.1.0",
+  "dependencies": {
+    "jquery": "1.9.1",
+    "normalize.css": "~3.0.3",
+    "susy": "^2.2.12"
+  }
 }
