@@ -7,6 +7,7 @@ import cached       from 'gulp-cached';
 import filter       from 'gulp-filter';
 import rename       from 'gulp-rename';
 import prettify     from 'gulp-html-prettify';
+import inline       from 'gulp-inline';
 import errorHandler from '../utils/errorHandler';
 import settings     from '../settings';
 
@@ -31,5 +32,9 @@ gulp.task('markup', () => {
             preserve_newlines: true
         }))
         .pipe(rename({dirname: '.'}))
+        .pipe(inline({
+            base: 'static/',
+            disabledTypes: ['css', 'img', 'js']
+        }))
         .pipe(gulp.dest(settings.baseDist));
 });
