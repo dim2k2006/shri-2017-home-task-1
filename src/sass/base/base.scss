@@ -6,55 +6,27 @@
     box-sizing: border-box;
 }
 
+html {
+    min-height: 100%;
+    min-width: 320px;
+}
+
 html, body {
-    height:100%;
+    height: 100%;
 }
 
 body {
     width: 100%;
-    font-weight: 400;
-    font-family: $font-family-regular;
-    font-size: $font-size-default;
-    line-height: 1.4;
-    color: $color-primary;
     background: $color-white;
 }
 
-h1 {
-    margin: 1.2em 0;
-    font-weight: 400;
-    font-size: $font-size-large;
-    line-height: $font-size-large;
-    color: $color-gray;
-    text-transform: uppercase;
-
-    @include respond-to('big') {
-        margin: .5em 0;
-    }
-
-    @include respond-to('small') {
-        margin-top: 0;
-        font-size: $font-size-large * 0.8;
-        line-height: $font-size-large * 1;
-    }
-}
-
-h3 {
-    font-weight: 400;
-    font-size: $font-size-medium;
-    line-height: $font-size-medium * 1.4;
-    color: $color-secondary;
-}
-
-a {
-    text-decoration: none;
-    outline: none;
-    color: $color-white;
-    transition: color .3s ease;
-
-    &:hover {
-        color: $color-hover;
-    }
+.pageWrapper {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: hidden;
 }
 
 img {
@@ -71,4 +43,16 @@ button {
     line-height: normal;
     outline: none;
     user-select: none;
+}
+
+.btn-default {
+    //@include btn-default;
+}
+
+.btn-default.blue {
+    //@include btn-default-blue;
+}
+
+.btn-small {
+    //@include btn-small;
 }
