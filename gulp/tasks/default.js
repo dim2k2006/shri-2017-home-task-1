@@ -4,13 +4,13 @@ import runSequence from 'run-sequence';
 gulp.task('default', () => (
     runSequence(
         'clean',
-        'markup',
+        'copy',
+        'images',
         'styles-dependencies',
         'styles',
         'scripts-dependencies',
         'scripts',
-        'images',
-        'copy',
+        'markup',
         'connect',
         'watch'
     )
