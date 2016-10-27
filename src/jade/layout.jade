@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 
 include mixins/bemto
-include mixins/mixins
 
 block vars
     - var innerPage = false
@@ -18,10 +17,7 @@ html(lang="ru")
         meta(name="Keywords" content=pageKeywords || "")
         title=pageTitle || ""
 
-        link(rel="shortcut icon", href="images/favicon16x16.png", type="image/x-icon")
-        link(rel="apple-touch-icon", sizes="76x76", href="images/favicon76x76.png")
-        link(rel="apple-touch-icon", sizes="120x120", href="images/favicon120x120.png")
-        link(rel="apple-touch-icon", sizes="152x152", href="images/favicon152x152.png")
+        link(rel="shortcut icon", href="images/favicon.png", type="image/x-icon")
 
         link(href='css/vendor.min.css' rel='stylesheet')
         link(href='css/main.min.css' rel='stylesheet')
@@ -39,3 +35,7 @@ html(lang="ru")
             block content
 
         include ../blocks/footer/footer
+
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js')
+        script(src='scripts/vendor.min.js')
+        script(src='scripts/main.min.js')
