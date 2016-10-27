@@ -1,3 +1,90 @@
+// blockTitle
+@mixin blockTitle {
+    margin-bottom: .5em;
+}
+
+// inputDefault
+//@mixin inputDefault {
+//    position: relative;
+//    display: block;
+//    width: 100%;
+//    height: 40px;
+//    padding-top: 0;
+//    padding-bottom: 0;
+//    padding-left: 15px;
+//    padding-right: 15px;
+//    font-family: $font-family-regular;
+//    font-size: $font-size-predefault;
+//    line-height: 40px;
+//    appearance: none;
+//    border: none;
+//    outline: none;
+//    color: rgba($color-cod-gray, .8);
+//    border-radius: 0;
+//    background-color: $color-white;
+//    border: 1px solid $color-mystic;
+//    @include transitionDefault;
+//
+//    &:focus {
+//        border-color: $color-danube;
+//    }
+//}
+
+// textareaDefault
+//@mixin textareaDefault {
+//    position: relative;
+//    display: block;
+//    width: 100%;
+//    height: 120px;
+//    padding-top: 15px;
+//    padding-bottom: 15px;
+//    padding-left: 15px;
+//    padding-right: 15px;
+//    font-family: $font-family-regular;
+//    font-size: $font-size-predefault;
+//    line-height: $line-height-little;
+//    appearance: none;
+//    border: none;
+//    outline: none;
+//    resize: none;
+//    color: rgba($color-cod-gray, .8);;
+//    border-radius: 0;
+//    background-color: $color-white;
+//    border: 1px solid $color-mystic;
+//    @include transitionDefault;
+//
+//    &:focus {
+//        border-color: $color-danube;
+//    }
+//}
+
+// Vertical paddings
+//@mixin blockPaddingVertical {
+//    padding-top: 80px;
+//    padding-bottom: 80px;
+//
+//    @include respond-to('prebig') {
+//        padding-top: 40px;
+//        padding-bottom: 40px;
+//    }
+//}
+
+// Horizontal paddings
+@mixin blockPaddingHorizontal {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+// Transition default
+@mixin transitionDefault {
+    transition: all .3s ease;
+}
+
+// Transition dropdown icon
+@mixin transitionDropdownIcon {
+    transition: all .1s ease-out;
+}
+
 // Clearfix
 @mixin clearfix {
     &::after {
@@ -132,4 +219,89 @@
         background-image: url('../images/' + $file + '@2x.' + $type);
         background-size: $width $height;
     }
+}
+
+// sideBarBlockPadding
+@mixin sideBarBlock {
+    padding-left: 19px;
+    padding-right: 19px;
+    padding-top: 18px;
+    padding-bottom: 25px;
+    border-radius: 3px;
+    border: 1px solid $color-iron;
+    border-bottom: none;
+    box-shadow: 0 1px 1px 0 rgba($color-black, .1);
+    background-color: $color-white;
+}
+
+// contentBlock
+@mixin contentBlock {
+    padding-top: 22px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: $color-white;
+    border-radius: 3px;
+    box-shadow: 0 1px 1px 0 rgba($color-black, .1);
+
+    @include respond-to('prebig') {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+// blockMargin
+@mixin blockMargin {
+    margin-bottom: 15px;
+}
+
+// placeholder
+@mixin placeholder {
+    &.placeholder { @content; }
+    &:-moz-placeholder { @content; }
+    &::-moz-placeholder { @content; }
+    &::-webkit-input-placeholder { @content; }
+}
+
+// tablePercentCount
+@function tablePercentCount($width, $container) {
+    @return 0% + to-fixed($width / $container * 100, 1);
+}
+
+/// toFixed() function in Sass
+/// @author Hugo Giraudel
+/// @param {Number} $float - Number to format
+/// @param {Number} $digits [2] - Number of digits to leave
+/// @return {Number}
+@function to-fixed($float, $digits: 2) {
+    $sass-precision: 5;
+
+    @if $digits > $sass-precision {
+        @warn "Sass sets default precision to #{$sass-precision} digits, and there is no way to change that for now."
+    + "The returned number will have #{$sass-precision} digits, even if you asked for `#{$digits}`."
+    + "See https://github.com/sass/sass/issues/1122 for further informations.";
+    }
+
+    $pow: pow(10, $digits);
+    @return round($float * $pow) / $pow;
+}
+
+/// Power function
+/// @param {Number} $x
+/// @param {Number} $n
+/// @return {Number}
+@function pow($x, $n) {
+    $ret: 1;
+
+    @if $n >= 0 {
+        @for $i from 1 through $n {
+            $ret: $ret * $x;
+        }
+    } @else {
+        @for $i from $n to 0 {
+            $ret: $ret / $x;
+        }
+    }
+
+    @return $ret;
 }
