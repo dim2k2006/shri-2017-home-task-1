@@ -4,11 +4,12 @@ import runSequence from 'run-sequence';
 gulp.task('build', () => (
     runSequence(
         'clean',
-        'markup',
+        'copy',
+        'images',
         'styles-dependencies',
         'styles',
+        'scripts-dependencies',
         'scripts',
-        'images',
-        'copy'
+        'markup'
     )
 ));
