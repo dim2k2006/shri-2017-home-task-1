@@ -34,7 +34,8 @@ gulp.task('markup', () => {
         .pipe(rename({dirname: '.'}))
         .pipe(inline({
             base: 'static/',
-            disabledTypes: ['css', 'img', 'js']
+            disabledTypes: ['css', 'img', 'js'],
+            ignore: settings.ignoreInline
         }))
         .pipe(gulp.dest(settings.baseDist));
 });

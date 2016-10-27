@@ -14,5 +14,9 @@ export default {
         scripts: './static/scripts',
         images: './static/images',
         fonts: './static/fonts'
-    }
+    },
+
+    ignoreInline: [
+
+    ]
 };
