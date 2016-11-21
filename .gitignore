@@ -4,6 +4,5 @@ src/bower_components
 output
 static
 blocks.scss
-main.js
 src/sass/vendor
 .idea/
