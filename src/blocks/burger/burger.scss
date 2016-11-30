@@ -11,7 +11,7 @@ $burger: '.burger';
     padding-right: 20px;
     outline: 0;
 
-    @include respond-to('afterincreased') {
+    @include respond-to('increased') {
         display: block;
     }
 
