@@ -1,4 +1,6 @@
 include mixins/bemto
+include ../blocks/header/header
+include ../blocks/footer/footer
 
 doctype html
 
@@ -31,13 +33,13 @@ html(lang="ru")
         script(src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js")
         <![endif]-->
     body
+        +b('div').wrapper
+            +header
 
-        include ../blocks/header/header
+            +b('main').main
 
-        +b('main').main
+                block content
 
-            block content
-
-        include ../blocks/footer/footer
+            +footer
 
         //script(src='scripts/main.min.js')
