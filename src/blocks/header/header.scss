@@ -2,4 +2,7 @@ $header: '.header';
 
 #{$header} {
     flex: none;
+    @include blockPaddingHorizontal;
+    @include blockPaddingVertical;
+    text-align: center;
 }
