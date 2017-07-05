@@ -2,6 +2,11 @@ import gulp         from 'gulp';
 import settings     from '../settings';
 
 gulp.task('copy', () => {
-    return gulp.src(settings.src.fonts + '/**')
-        .pipe(gulp.dest(settings.dist.fonts));
+    gulp.src(settings.src.images + '/*.xml')
+        .pipe(gulp.dest(settings.dist.images));
+
+    gulp.src(settings.src.images + '/*.json')
+        .pipe(gulp.dest(settings.dist.images));
+
+    return true;
 });
