@@ -2,4 +2,11 @@ $footer: '.footer';
 
 #{$footer} {
     flex: none;
+    padding: 20px 0;
+    @include blockPaddingHorizontal;
+    font-size: $font-size-extrasmall;
+    line-height: $line-height-prelittle;
+    color: $color-dusty-gray;
+    text-align: center;
+    background-color: $color-emperor;
 }
