@@ -5,4 +5,23 @@ $header: '.header';
     @include blockPaddingHorizontal;
     @include blockPaddingVertical;
     text-align: center;
+
+    &__title {
+        h1 {
+            margin-bottom: .6em;
+        }
+    }
+
+    &__subtitle {
+        max-width: 36rem;
+        margin: 0 auto;
+
+        p {
+            @include font-size($font-size-premedium);
+
+            @include f-last(1) {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
