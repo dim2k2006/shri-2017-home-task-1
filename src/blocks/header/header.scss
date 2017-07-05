@@ -1,7 +1,5 @@
-.header {
-    position: relative;
-    display: block;
-    width: 100%;
-    height: 200px;
-    background-color: red;
+$header: '.header';
+
+#{$header} {
+    flex: none;
 }
