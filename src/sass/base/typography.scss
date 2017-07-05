@@ -20,8 +20,8 @@ time, mark, audio, video {
 }
 
 body {
-    font-weight: 400;
-    font-family: $font-family-regular;
+    font-weight: normal;
+    font-family: $font-family-default;
     font-size: $font-size-default;
     line-height: $line-height-small;
     color: $color-black;
@@ -43,10 +43,13 @@ iframe {
     margin-right: auto;
 }
 
-h1 {
-    font-weight: normal;
-    font-family: $font-family-bold;
+h1, h2, h3, h4, h5, h6 {
+    font-family: $font-family-default;
     color: $color-black;
+}
+
+h1 {
+    font-weight: bold;
 }
 
 h2,
@@ -55,28 +58,14 @@ h4,
 h5,
 h6 {
     font-weight: normal;
-    font-family: $font-family-bold;
-    color: $color-black;
 }
 
 h1 {
     font-size: $font-size-huge;
-
-    @include respond-to('increased') {
-        font-size: $font-size-huge*0.8;
-    }
-
-    @include respond-to('prebig') {
-        font-size: $font-size-huge*0.6;
-    }
 }
 
 h2 {
     font-size: $font-size-huge;
-
-    @include respond-to('prebig') {
-        font-size: $font-size-semilarge;
-    }
 }
 
 h3 {
@@ -100,12 +89,11 @@ h1, h2, h3, h4 {
 }
 
 a {
-    color: $color-mariner;
-    text-decoration: none;
+    color: $color-cobalt;
+    text-decoration: underline;
 
     &:hover {
-        color: lighten($color-mariner, 10%);
-        text-decoration: underline;
+        color: $color-guardsman-red;
     }
 }
 
@@ -115,11 +103,9 @@ ul, ol {
     padding-left: $font-size-default * $line-height-small;
 }
 
-ul li {
-    list-style: disc;
-    list-style-position: outside;
-}
-
-strong {
-    font-family: $font-family-bold;
+ul {
+    li {
+        list-style: disc;
+        list-style-position: outside;
+    }
 }
