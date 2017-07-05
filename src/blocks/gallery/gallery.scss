@@ -3,9 +3,7 @@ $gallery: '.gallery';
 #{$gallery} {
     max-width: 2000px;
     margin: 0 auto;
-    @include blockPaddingVertical("", bottom);
-    padding-left: 4px;
-    padding-right: 4px;
+    padding: 4px;
 
     &__list {
         display: flex;
