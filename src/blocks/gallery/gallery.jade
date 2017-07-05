@@ -9,6 +9,6 @@ mixin gallery(data)
                 +e('ul').list
                     each item in galleryData.list
                         +e('li').item
-                            +e('a').link(href= item.source, title= item.title)
-                                +e('picture')
-                                    +e('img').img(src="/images/" + item.preview, srcset="/images/" + item.preview + " 2x", alt= item.title)
+                            +e('a').link(href="/images/" + item.source, title= item.title)
+                                +e('picture').picture
+                                    +e('img').img(src="/images/" + item.preview, alt= item.title)

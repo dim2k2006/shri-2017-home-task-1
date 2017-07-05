@@ -1,6 +1,8 @@
 $gallery: '.gallery';
 
 #{$gallery} {
+    max-width: 2000px;
+    margin: 0 auto;
     @include blockPaddingVertical("", bottom);
     padding-left: 4px;
     padding-right: 4px;
@@ -27,7 +29,7 @@ $gallery: '.gallery';
             flex-basis: 460px;
         }
 
-        &:nth-child(7n) {
+        &:nth-child(7n + 1) {
             flex-basis: 550px;
         }
     }
