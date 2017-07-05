@@ -6,4 +6,69 @@ block head
     - var pageTitle="Галерея изображений";
 
 block content
-    //h1 контент
+    include ../blocks/gallery/gallery
+
+    +gallery({
+        list: [
+            {
+                title: 'Terigon',
+                preview: 'vis-ship-1.jpg',
+                source: 'vis-ship-1.jpg'
+            },
+            {
+                title: 'Divine Intervention',
+                preview: 'vis-ship-2.jpg',
+                source: 'vis-ship-2.jpg'
+            },
+            {
+                title: 'Suzanna',
+                preview: 'vis-ship-3.jpg',
+                source: 'vis-ship-3.jpg'
+            },
+            {
+                title: 'Alexandria',
+                preview: 'vis-ship-4.jpg',
+                source: 'vis-ship-4.jpg'
+            },
+            {
+                title: 'Angel',
+                preview: 'vis-ship-5.jpg',
+                source: 'vis-ship-5.jpg'
+            },
+            {
+                title: 'SSE Javelin',
+                preview: 'vis-ship-6.jpg',
+                source: 'vis-ship-6.jpg'
+            },
+            {
+                title: 'LWSS Liberator',
+                preview: 'vis-ship-7.jpg',
+                source: 'vis-ship-7.jpg'
+            },
+            {
+                title: 'CS Raving',
+                preview: 'vis-ship-8.jpg',
+                source: 'vis-ship-8.jpg'
+            },
+            {
+                title: 'Avalanche',
+                preview: 'vis-ship-9.jpg',
+                source: 'vis-ship-9.jpg'
+            },
+            {
+                title: 'Slayer',
+                preview: 'vis-ship-10.jpg',
+                source: 'vis-ship-10.jpg'
+            },
+            {
+                title: 'Priestess',
+                preview: 'vis-ship-11.jpg',
+                source: 'vis-ship-11.jpg'
+            },
+            {
+                title: 'The Guardian',
+                preview: 'vis-ship-12.jpg',
+                source: 'vis-ship-12.jpg'
+            }
+        ]
+    })

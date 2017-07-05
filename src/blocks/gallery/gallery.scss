@@ -1,0 +1,41 @@
+$gallery: '.gallery';
+
+#{$gallery} {
+    @include blockPaddingVertical("", bottom);
+    padding-left: 4px;
+    padding-right: 4px;
+
+    &__list {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
+
+    &__list,
+    &__item {
+        @include list-reset;
+    }
+
+    &__item {
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: 250px;
+        height: 168px;
+        padding: 4px;
+
+        &:nth-child(4n) {
+            flex-basis: 460px;
+        }
+
+        &:nth-child(7n) {
+            flex-basis: 550px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        height: 100%;
+        margin-bottom: 0;
+        object-fit: cover;
+    }
+}
