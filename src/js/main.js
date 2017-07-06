@@ -1,6 +1,4 @@
 /**
  * Init main module
  */
-$(document).ready(() => {
-    $.modules.main.init();
-});
+window.addEventListener('load', () => app.modules.main.init);

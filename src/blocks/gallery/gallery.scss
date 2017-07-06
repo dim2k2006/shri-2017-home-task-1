@@ -58,6 +58,7 @@ $gallery: '.gallery';
 
     &__link {
         color: $color-white;
+        touch-action: none;
 
         &:hover {
             color: $color-yellow;
