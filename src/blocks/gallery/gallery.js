@@ -23,7 +23,7 @@
          */
         self.getOptions = () => {
             self.container = document.querySelector('.gallery');
-            self.modal = document.querySelector('.modal');
+            self.modalOpen = app.modules.modal.open;
         };
 
         /**
@@ -47,7 +47,7 @@
                 return;
             }
 
-            self.modal.classList.add('modal_state_open');
+            self.modalOpen();
         };
 
         /**

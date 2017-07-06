@@ -23,6 +23,8 @@
          */
         self.getOptions = () => {
             self.container = document.querySelector('.modal');
+            self.title = document.querySelector('.title');
+            self.description = document.querySelector('.description p');
             self.closeBtn = document.querySelector('.modal__close');
         };
 
