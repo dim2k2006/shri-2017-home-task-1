@@ -61,16 +61,6 @@ $gallery: '.gallery';
 
         &:hover {
             color: $color-yellow;
-
-            #{$gallery} {
-                &__icon {
-                    svg {
-                        path {
-                            fill: currentColor;
-                        }
-                    }
-                }
-            }
         }
     }
 
@@ -95,31 +85,5 @@ $gallery: '.gallery';
         text-transform: uppercase;
         background: rgba($color-black, .4);
         @include transition(color);
-    }
-
-    &__icon {
-        position: absolute;
-        display: block;
-        width: 50px;
-        height: 50px;
-        top: 50%;
-        left: 50%;
-        margin-top: -15px;
-        transform: translate(-50%, -50%);
-
-        svg {
-            position: relative;
-            display: block;
-            max-width: 100%;
-            max-height: 100%;
-            margin: 0 auto;
-            top: 50%;
-            transform: translateY(-50%);
-
-            path {
-                fill: transparent;
-                @include transition(fill);
-            }
-        }
     }
 }
