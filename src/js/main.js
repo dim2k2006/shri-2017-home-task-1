@@ -1,4 +1,6 @@
 /**
  * Init main module
  */
-window.addEventListener('load', () => app.modules.main.init);
+window.addEventListener('load', () => {
+    window.app.modules.main.init();
+});
