@@ -12,12 +12,25 @@ $header: '.header';
         margin-top: -100px;
         transform-origin:50% 100%;
         transform:perspective(130px) rotateX(20deg);
+
+        @include respond-to('medium') {
+            margin-top: 0;
+            transform: perspective(0) rotateX(0);
+        }
     }
 
     &__title {
         h1 {
             margin-bottom: .6em;
             @include font-size($font-size-huge);
+
+            @include respond-to('prebig') {
+                @include font-size($font-size-afterlarge);
+            }
+
+            @include respond-to('medium') {
+                @include font-size($font-size-presemilarge);
+            }
         }
     }
 
@@ -25,6 +38,10 @@ $header: '.header';
         max-width: 36rem;
         margin: 0 auto;
         @include font-size($font-size-prelarge);
+
+        @include respond-to('prebig') {
+            @include font-size($font-size-premedium);
+        }
 
         p {
             @include f-last(1) {

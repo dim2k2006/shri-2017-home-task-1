@@ -1,8 +1,6 @@
 $gallery: '.gallery';
 
 #{$gallery} {
-    max-width: 2000px;
-    margin: 0 auto;
     padding: 4px;
 
     &__list {
@@ -21,6 +19,7 @@ $gallery: '.gallery';
         flex-grow: 1;
         flex-shrink: 1;
         flex-basis: 250px;
+        max-width: 700px;
         height: 168px;
         border: 4px solid transparent;
         background: rgba($color-white, .1);
@@ -42,10 +41,18 @@ $gallery: '.gallery';
 
         &:nth-child(4n) {
             flex-basis: 460px;
+
+            @include respond-to('increased') {
+                flex-basis: 250px;
+            }
         }
 
         &:nth-child(7n + 1) {
             flex-basis: 550px;
+
+            @include respond-to('increased') {
+                flex-basis: 250px;
+            }
         }
     }
 
