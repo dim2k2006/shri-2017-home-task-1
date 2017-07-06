@@ -1,0 +1,8 @@
+mixin modal
+    +b('section').modal
+        +e('div').wrapper
+            +e('div').content
+                +e('div').preview
+                    +e('img')(src="/images/vis-ship-2-source.jpg")
+
+                +e('div').info!= "Here goes some info"

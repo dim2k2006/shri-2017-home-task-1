@@ -23,6 +23,7 @@
          */
         self.getOptions = () => {
             self.container = document.querySelector('.gallery');
+            self.modal = document.querySelector('.modal');
         };
 
         /**
@@ -46,7 +47,7 @@
                 return;
             }
 
-            console.log(link);
+            self.modal.classList.add('modal_state_open');
         };
 
         /**

@@ -1,0 +1,36 @@
+$modal: '.modal';
+
+#{$modal} {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    background: rgba(red, .4);
+    overflow-x: hidden;
+    overflow-y: scroll;
+    z-index: 9999;
+
+    &__wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        min-height: 100%;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__content {
+        display: flex;
+    }
+
+
+
+
+    &#{$modal}_state_open {
+        display: block;
+    }
+
+
+}
