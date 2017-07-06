@@ -30,7 +30,7 @@ $modal: '.modal';
 
     &__preview {
         position: relative;
-        width: calc(100% - 300px);
+        width: calc(100% - 330px);
         background: rgba($color-white, .1);
 
         &:before {
@@ -55,8 +55,8 @@ $modal: '.modal';
 
     &__info {
         position: relative;
-        width: 300px;
-        padding: 20px;
+        width: 330px;
+        padding: 44px 30px;
         color: $color-black;
         text-align: left;
         background-color: $color-white;
@@ -65,8 +65,7 @@ $modal: '.modal';
     &__title {
         margin-bottom: .6em;
         font-weight: 700;
-        @include font-size($font-size-small);
-        text-transform: uppercase;
+        @include font-size($font-size-mediumplus);
     }
 
     &__description {
@@ -89,8 +88,8 @@ $modal: '.modal';
         svg {
             position: absolute;
             display: block;
-            width: 22px;
-            height: 22px;
+            width: 18px;
+            height: 18px;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);

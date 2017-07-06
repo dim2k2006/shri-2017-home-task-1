@@ -80,10 +80,9 @@ $gallery: '.gallery';
         left: 0;
         padding: 8px 10px;
         font-weight: 700;
-        @include font-size($font-size-small);
+        @include font-size($font-size-afterdefault);
         color: currentColor;
         text-align: center;
-        text-transform: uppercase;
         background: rgba($color-black, .4);
         @include transition(color);
     }
