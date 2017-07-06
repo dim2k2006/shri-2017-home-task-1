@@ -8,8 +8,16 @@ mixin gallery(data)
             +e('div').content
                 +e('ul').list
                     each item in galleryData.list
+                        - var itemData = {};
+
+                        - itemData.title = item.title;
+                        - itemData.description = item.description;
+                        - itemData.source = "/images/" + item.source;
+
+                        - itemData = JSON.stringify(itemData);
+
                         +e('li').item
-                            +e('a').link(href="/images/" + item.source, title= item.title, data-title= item.title, data-description= item.description)
+                            +e('a').link(href="/images/" + item.source, title= item.title, data-info= itemData)
                                 +e('picture').picture
                                     +e('img').img(src="/images/" + item.preview, alt= item.title)
 

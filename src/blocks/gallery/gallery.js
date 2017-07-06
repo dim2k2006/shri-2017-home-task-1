@@ -47,7 +47,9 @@
                 return;
             }
 
-            self.modalOpen();
+            const info = JSON.parse(link.dataset.info);
+
+            self.modalOpen(info);
         };
 
         /**

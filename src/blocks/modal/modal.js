@@ -23,8 +23,9 @@
          */
         self.getOptions = () => {
             self.container = document.querySelector('.modal');
-            self.title = document.querySelector('.title');
-            self.description = document.querySelector('.description p');
+            self.title = document.querySelector('.modal__title');
+            self.description = document.querySelector('.modal__description p');
+            self.img = document.querySelector('.modal__preview img');
             self.closeBtn = document.querySelector('.modal__close');
         };
 
@@ -37,8 +38,19 @@
 
         /**
          * Open modal window
+         * @param {Object} info
          */
-        self.open = () => {
+        self.open = (info) => {
+            const data = info || {};
+
+            data.title = data.title ? data.title : 'Here goes title';
+            data.description = data.description ? data.description : 'Here goes description';
+            data.source = data.source ? data.source : '';
+
+            self.title.textContent = data.title;
+            self.description.textContent = data.description;
+            self.img.src = data.source;
+
             self.container.classList.add('modal_state_open');
         };
 
