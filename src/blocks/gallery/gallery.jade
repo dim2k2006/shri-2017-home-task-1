@@ -12,3 +12,5 @@ mixin gallery(data)
                             +e('a').link(href="/images/" + item.source, title= item.title)
                                 +e('picture').picture
                                     +e('img').img(src="/images/" + item.preview, alt= item.title)
+
+                                +e('div').title!= item.title

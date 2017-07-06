@@ -62,4 +62,28 @@ $gallery: '.gallery';
         margin-bottom: 0;
         object-fit: cover;
     }
+
+    &__title {
+        position: absolute;
+        display: block;
+        width: 100%;
+        bottom: 0;
+        left: 0;
+        padding: 8px 10px;
+        font-weight: 700;
+        @include font-size($font-size-small);
+        color: currentColor;
+        text-align: center;
+        text-transform: uppercase;
+        background: rgba($color-black, .4);
+        @include transition(color);
+    }
+
+    &__link {
+        color: $color-white;
+
+        &:hover {
+            color: $color-yellow;
+        }
+    }
 }
