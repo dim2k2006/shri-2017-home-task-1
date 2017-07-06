@@ -8,7 +8,7 @@ $modal: '.modal';
     top: 0;
     left: 0;
     text-align: center;
-    background: rgba(red, .4);
+    background: rgba($color-black, .8);
     overflow-x: hidden;
     overflow-y: scroll;
     z-index: 9999;
@@ -17,16 +17,80 @@ $modal: '.modal';
         display: flex;
         flex-wrap: wrap;
         min-height: 100%;
+        padding: 50px;
         justify-content: center;
         align-items: center;
     }
 
     &__content {
         display: flex;
+        width: 100%;
     }
 
+    &__preview {
+        width: calc(100% - 300px);
 
+        img {
+            max-height: 100%;
+            margin-bottom: 0;
+        }
+    }
 
+    &__info {
+        position: relative;
+        width: 300px;
+        padding: 20px;
+        color: $color-black;
+        text-align: left;
+        background-color: $color-white;
+    }
+
+    &__title {
+        margin-bottom: .6em;
+        font-weight: 700;
+        @include font-size($font-size-small);
+        text-transform: uppercase;
+    }
+
+    &__description {
+        p {
+            @include f-last(1) {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__close {
+        position: absolute;
+        display: block;
+        width: 40px;
+        height: 40px;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+
+        svg {
+            position: absolute;
+            display: block;
+            width: 22px;
+            height: 22px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            path {
+                @include transition(fill);
+            }
+        }
+
+        &:hover {
+            svg {
+                path {
+                    fill: $color-black;
+                }
+            }
+        }
+    }
 
     &#{$modal}_state_open {
         display: block;

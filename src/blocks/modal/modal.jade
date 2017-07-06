@@ -5,4 +5,11 @@ mixin modal
                 +e('div').preview
                     +e('img')(src="/images/vis-ship-2-source.jpg")
 
-                +e('div').info!= "Here goes some info"
+                +e('div').info
+                    +e('div').title!= "Here goes title"
+
+                    +e('div').description
+                        +e('p')!= "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Sed porttitor lectus nibh. Quisque velit nisi, pretium ut lacinia in, elementum id enim."
+
+                    +e('div').close(title="close")
+                        +e('img')(src="/images/ico-close.svg")
