@@ -4,21 +4,29 @@ $header: '.header';
     flex: none;
     @include blockPaddingHorizontal;
     @include blockPaddingVertical;
+    color: $color-yellow;
     text-align: center;
+
+    &__box {
+        position: relative;
+        margin-top: -100px;
+        transform-origin:50% 100%;
+        transform:perspective(130px) rotateX(20deg);
+    }
 
     &__title {
         h1 {
             margin-bottom: .6em;
+            @include font-size($font-size-huge);
         }
     }
 
     &__subtitle {
         max-width: 36rem;
         margin: 0 auto;
+        @include font-size($font-size-prelarge);
 
         p {
-            @include font-size($font-size-premedium);
-
             @include f-last(1) {
                 margin-bottom: 0;
             }

@@ -24,7 +24,7 @@ html {
     font-family: $font-family-default;
     font-size: 100%;
     line-height: $line-height-small;
-    color: $color-black;
+    color: $color-white;
     -webkit-font-smoothing: antialiased;
 
     @include respond-to('prebig') {
@@ -49,7 +49,6 @@ iframe {
 
 h1, h2, h3, h4, h5, h6 {
     font-family: $font-family-default;
-    color: $color-black;
 }
 
 h1 {
