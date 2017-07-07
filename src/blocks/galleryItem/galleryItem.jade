@@ -1,0 +1,7 @@
+mixin galleryItem
+    +b('div').galleryItem
+        +e('a').link(href="", title= "", data-id="")
+            +e('picture').picture
+                +e('img').img(src= "", alt= "")
+
+            +e('div').title!= ""

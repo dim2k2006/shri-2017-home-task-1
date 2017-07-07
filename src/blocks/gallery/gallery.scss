@@ -86,4 +86,8 @@ $gallery: '.gallery';
         background: rgba($color-black, .4);
         @include transition(color);
     }
+
+    &__footer {
+        display: none;
+    }
 }
