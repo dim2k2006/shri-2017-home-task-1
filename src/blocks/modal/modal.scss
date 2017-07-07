@@ -50,7 +50,6 @@ $modal: '.modal';
 
         @include respond-to('increased') {
             width: 100%;
-            min-height: 150px;
             align-items: flex-start;
         }
 
@@ -147,5 +146,15 @@ $modal: '.modal';
 
     &#{$modal}_state_open {
         display: block;
+    }
+
+    &#{$modal}_state_loading {
+        #{$modal} {
+            &__preview {
+                @include respond-to('increased') {
+                    min-height: 150px;
+                }
+            }
+        }
     }
 }

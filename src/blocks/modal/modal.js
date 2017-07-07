@@ -52,6 +52,9 @@
             self.img.src = data.source;
 
             self.container.classList.add('modal_state_open');
+            self.container.classList.add('modal_state_loading');
+
+            self.img.addEventListener('load', self.load);
         };
 
         /**
@@ -59,6 +62,15 @@
          */
         self.close = () => {
             self.container.classList.remove('modal_state_open');
+
+            self.img.removeEventListener('load', self.load);
+        };
+
+        /**
+         * Remove loading state
+         */
+        self.load = () => {
+            self.container.classList.remove('modal_state_loading');
         };
 
         /**
