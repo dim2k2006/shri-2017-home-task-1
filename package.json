@@ -80,6 +80,7 @@
     "path": [
       "./src/bower_components/element-matches/closest.js",
       "./src/bower_components/array.prototype.find/index.js",
+      "./src/bower_components/mdn-array.prototype.findindex/index.js",
       "./node_modules/object-fit-images/dist/ofi.min.js"
     ]
   },

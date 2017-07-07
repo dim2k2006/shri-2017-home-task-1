@@ -74,7 +74,8 @@
          * Open modal window
          */
         self.openModal = () => {
-            const data = self.data.find(galleryItem => galleryItem.isOpen);
+            const index = self.data.findIndex(galleryItem => galleryItem.isOpen);
+            const data = self.data[index] || {};
 
             data.id = data.id ? data.id : '';
             data.title = data.title ? data.title : 'Заголовок изображения не найден';
@@ -85,6 +86,18 @@
             self.modalTitle.textContent = data.title;
             self.modalDescription.textContent = data.description;
             self.modalImg.src = data.source;
+
+            if (self.data[index - 1]) {
+
+                self.modal.classList.add('galleryModal_state_prev');
+
+            }
+
+            if (self.data[index + 1]) {
+
+                self.modal.classList.add('galleryModal_state_next');
+
+            }
 
             self.modal.classList.add('galleryModal_state_open');
             self.modal.classList.add('galleryModal_state_loading');
@@ -109,6 +122,8 @@
             });
 
             self.modal.classList.remove('galleryModal_state_open');
+            self.modal.classList.remove('galleryModal_state_prev');
+            self.modal.classList.remove('galleryModal_state_next');
 
             self.modalImg.removeEventListener('load', self.loadModal);
         };

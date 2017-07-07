@@ -4,6 +4,7 @@
   "dependencies": {
     "normalize.css": "~3.0.3",
     "element-matches": "closest#^2.0.1",
-    "array.prototype.find": "array-prototype-find#^0.1.0"
+    "array.prototype.find": "array-prototype-find#^0.1.0",
+    "mdn-array.prototype.findindex": "^1.0.0"
   }
 }
