@@ -176,6 +176,8 @@
                     return galleryItem;
                 });
 
+                self.modalImg.src = '';
+
                 self.setupModal();
 
             }
