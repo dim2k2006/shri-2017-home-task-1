@@ -6,11 +6,9 @@ mixin galleryModal
                     +e('div').box
                         +e('img')(src="")
 
-                    +e('a').arrow(href="#", class="galleryModal__arrow_prev")
-                        +e('img')(src="/images/ico-arrow-prev.svg")
+                    +e('a').arrow(href="#", class="galleryModal__arrow_prev", data-id="")
 
-                    +e('a').arrow(href="#", class="galleryModal__arrow_next")
-                        +e('img')(src="/images/ico-arrow-next.svg")
+                    +e('a').arrow(href="#", class="galleryModal__arrow_next", data-id="")
 
                 +e('div').info
                     +e('div').title!= ""
