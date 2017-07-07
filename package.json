@@ -78,7 +78,11 @@
   },
   "vendorScripts": {
     "path": [
-      "./src/bower_components/element-matches/closest.js"
+      "./src/bower_components/element-matches/closest.js",
+      "./node_modules/object-fit-images/dist/ofi.min.js"
     ]
+  },
+  "dependencies": {
+    "object-fit-images": "^3.2.3"
   }
 }

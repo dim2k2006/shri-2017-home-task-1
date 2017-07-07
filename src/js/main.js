@@ -3,4 +3,6 @@
  */
 window.addEventListener('load', () => {
     window.app.modules.main.init();
+
+    objectFitImages();
 });
