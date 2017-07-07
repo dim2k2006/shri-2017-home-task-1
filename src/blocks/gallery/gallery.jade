@@ -1,4 +1,5 @@
 include ../galleryItem/galleryItem
+include ../galleryModal/galleryModal
 
 mixin gallery(data)
     - var galleryData = data ? data : {};
@@ -22,7 +23,10 @@ mixin gallery(data)
     +b('section').gallery(data-gallery= serverData)
         +e('div').wrapper
             +e('div').content
+                +e('div').mount
 
-            +e('div').footer
                 +e('div').template(id="templateDefault")
                     +galleryItem
+
+            +e('div').footer
+                +galleryModal
