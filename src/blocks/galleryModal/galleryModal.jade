@@ -6,6 +6,12 @@ mixin galleryModal
                     +e('div').box
                         +e('img')(src="")
 
+                    +e('a').arrow(href="#", class="galleryModal__arrow_prev")
+                        +e('img')(src="/images/ico-arrow-prev.svg")
+
+                    +e('a').arrow(href="#", class="galleryModal__arrow_next")
+                        +e('img')(src="/images/ico-arrow-next.svg")
+
                 +e('div').info
                     +e('div').title!= ""
 

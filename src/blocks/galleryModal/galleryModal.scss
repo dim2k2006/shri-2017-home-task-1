@@ -45,12 +45,19 @@ $galleryModal: '.galleryModal';
         position: relative;
         display: flex;
         width: calc(100% - 330px);
+        padding-left: 100px;
+        padding-right: 100px;
         align-items: center;
         background: rgba($color-white, .1);
 
         @include respond-to('increased') {
             width: 100%;
             align-items: flex-start;
+        }
+
+        @include respond-to('prebig') {
+            padding-left: 0;
+            padding-right: 0;
         }
 
         &:before {
@@ -144,6 +151,83 @@ $galleryModal: '.galleryModal';
         }
     }
 
+    &__arrow {
+        position: absolute;
+        display: none;
+        width: 100px;
+        height: 100%;
+        top: 0;
+
+        &:hover {
+            svg {
+                path {
+                    fill: rgba($color-white, 1);
+                }
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: none;
+            width: 50px;
+            height: 100%;
+            top: 0;
+            background: rgba($color-black, .4);
+
+            @include respond-to('prebig') {
+                display: block;
+            }
+        }
+
+        svg {
+            position: absolute;
+            display: block;
+            width: 19px;
+            height: 35px;
+            top: 50%;
+            transform: translateY(-50%);
+
+            @include respond-to('prebig') {
+                width: 10px;
+                height: 18px;
+            }
+
+            path {
+                fill: rgba($color-white, .5);
+                @include transition(fill);
+
+                @include respond-to('prebig') {
+                    fill: rgba($color-white, 1);
+                }
+            }
+        }
+
+        &#{$galleryModal}__arrow_prev {
+            left: 0;
+
+            &:before {
+                left: 0;
+            }
+
+            svg {
+                left: 20px;
+            }
+        }
+
+        &#{$galleryModal}__arrow_next {
+            right: 0;
+
+            &:before {
+                right: 0;
+            }
+
+            svg {
+                right: 20px;
+            }
+        }
+    }
+
     &#{$galleryModal}_state_open {
         display: block;
     }
@@ -153,6 +237,26 @@ $galleryModal: '.galleryModal';
             &__preview {
                 @include respond-to('increased') {
                     min-height: 150px;
+                }
+            }
+        }
+    }
+
+    &#{$galleryModal}_state_prev {
+        #{$galleryModal} {
+            &__arrow {
+                &#{$galleryModal}__arrow_prev {
+                    display: block;
+                }
+            }
+        }
+    }
+
+    &#{$galleryModal}_state_next {
+        #{$galleryModal} {
+            &__arrow {
+                &#{$galleryModal}__arrow_next {
+                    display: block;
                 }
             }
         }
