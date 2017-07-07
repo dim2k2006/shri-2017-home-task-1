@@ -144,12 +144,12 @@ $galleryModal: '.galleryModal';
         }
     }
 
-    &#{$modal}_state_open {
+    &#{$galleryModal}_state_open {
         display: block;
     }
 
-    &#{$modal}_state_loading {
-        #{$modal} {
+    &#{$galleryModal}_state_loading {
+        #{$galleryModal} {
             &__preview {
                 @include respond-to('increased') {
                     min-height: 150px;
