@@ -47,7 +47,7 @@
                 return;
             }
 
-            const info = JSON.parse(link.dataset.info);
+            const info = JSON.parse(link.getAttribute('data-info'));
 
             self.modalOpen(info);
         };
