@@ -13,7 +13,7 @@
 
 2. cd shri-2017-home-task-1
 
-3. npm i bower i
+3. npm i && bower i
 
 4. gulp build
 
