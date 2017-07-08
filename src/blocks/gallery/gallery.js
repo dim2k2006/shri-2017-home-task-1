@@ -37,7 +37,7 @@
          * Handle click event
          * @param {Object} event
          */
-        self.handleClick = function(event) {
+        self.handleClick = (event) => {
             const target = event.target;
             const link = target.closest('.gallery__link');
 
