@@ -59,7 +59,6 @@
          */
         self.close = () => {
             self.container.classList.remove('modal_state_open');
-            self.container.classList.remove('modal_state_loading');
         };
 
         /**
