@@ -23,7 +23,7 @@
          */
         self.getOptions = () => {
             self.container = document.querySelector('.gallery');
-            self.modalOpen = app.modules.modal.open;
+            self.modalOpen = app.modules.modal.route;
         };
 
         /**

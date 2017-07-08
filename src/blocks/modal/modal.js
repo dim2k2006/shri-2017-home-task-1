@@ -38,20 +38,18 @@
         };
 
         /**
-         * Open modal window
+         * Setup and open modal window
          * @param {Object} info
          */
-        self.open = (info) => {
-            const data = info || {};
+        self.route = (info) => {
+            self.setup(info);
+            self.open();
+        };
 
-            data.title = data.title ? data.title : 'Заголовок изображения не найден';
-            data.description = data.description ? data.description : 'Описание изображения не найдено.';
-            data.source = data.source ? data.source : 'images/vis-error.jpg';
-
-            self.title.textContent = data.title;
-            self.description.textContent = data.description;
-            self.img.src = data.source;
-
+        /**
+         * Open modal window
+         */
+        self.open = () => {
             self.container.classList.add('modal_state_open');
             setTimeout(() => self.container.classList.add('modal_state_visible'), self.delay.open);
         };
@@ -61,7 +59,36 @@
          */
         self.close = () => {
             self.container.classList.remove('modal_state_visible');
-            setTimeout(() => self.container.classList.remove('modal_state_open'), self.delay.close);
+            setTimeout(() => {
+                self.container.classList.remove('modal_state_open');
+
+                self.reset();
+            }, self.delay.close);
+        };
+
+        /**
+         * Setup modal data
+         * @param {Object} info
+         */
+        self.setup = (info) => {
+            const data = info || {};
+
+            data.title = data.title ? data.title : 'Заголовок изображения не найден';
+            data.description = data.description ? data.description : 'Описание изображения не найдено.';
+            data.source = data.source ? data.source : 'images/vis-error.jpg';
+
+            self.title.textContent = data.title;
+            self.description.textContent = data.description;
+            self.img.src = data.source;
+        };
+
+        /**
+         * Reset modal data
+         */
+        self.reset = () => {
+            self.title.textContent = '';
+            self.description.textContent = '';
+            self.img.src = '';
         };
 
         /**
