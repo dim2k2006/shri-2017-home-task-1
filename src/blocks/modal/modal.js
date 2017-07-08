@@ -27,6 +27,7 @@
             self.description = document.querySelector('.modal__description p');
             self.img = document.querySelector('.modal__preview img');
             self.closeBtn = document.querySelector('.modal__close');
+            self.delay = {open: 150, close: 200};
         };
 
         /**
@@ -52,13 +53,15 @@
             self.img.src = data.source;
 
             self.container.classList.add('modal_state_open');
+            setTimeout(() => self.container.classList.add('modal_state_visible'), self.delay.open);
         };
 
         /**
          * Close modal window
          */
         self.close = () => {
-            self.container.classList.remove('modal_state_open');
+            self.container.classList.remove('modal_state_visible');
+            setTimeout(() => self.container.classList.remove('modal_state_open'), self.delay.close);
         };
 
         /**

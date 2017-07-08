@@ -11,7 +11,9 @@ $modal: '.modal';
     background: rgba($color-black, .8);
     overflow-x: hidden;
     overflow-y: scroll;
+    opacity: 0;
     z-index: 9999;
+    @include transition(opacity);
 
     @include respond-to('prebig') {
         background: rgba($color-black, 1);;
@@ -164,5 +166,9 @@ $modal: '.modal';
 
     &#{$modal}_state_open {
         display: block;
+    }
+
+    &#{$modal}_state_visible {
+        opacity: 1;
     }
 }
